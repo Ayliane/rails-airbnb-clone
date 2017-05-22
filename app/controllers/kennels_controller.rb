@@ -15,9 +15,18 @@ class KennelsController < ApplicationController
   end
 
   def new
+    @kennel = Kennel.new()
   end
 
   def create
+    @kennel = Kennel.new(kennels_params)
+    @kennel.user = current_user
+
+    if @kennel.save
+      redirect_to kennels_path
+    else
+      render :new
+    end
   end
 
   def edit
