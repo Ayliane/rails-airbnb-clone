@@ -23,6 +23,13 @@ first_kennel = Kennel.create!(
   description:"I will take care of your dog"
 )
 
+second_kennel = Kennel.create!(
+  user: user_booker,
+  city: "Lyon",
+  address: "2 rue des Bleuets",
+  description: "I love pups !"
+)
+
 first_booking = Booking.create!(
   start_date: ('08-12-2017').to_datetime,
   end_date: ('18-12-2017').to_datetime,

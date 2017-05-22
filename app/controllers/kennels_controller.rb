@@ -5,7 +5,7 @@ class KennelsController < ApplicationController
     genuine_kennels = Kennel.where(city: params[:city])
     @kennels = []
     genuine_kennels.each do |kennel|
-      if kennel.bookings.present?
+      if kennel.bookings.blank?
         @kennels << kennel
       end
     end
