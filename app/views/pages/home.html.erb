@@ -1,3 +1,44 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url('<%= image_path('banner_img.jpeg') %>');">
+  <div class="banner-content">
+    <h1>HOLIDOGS</h1>
+    <p>Need holidays ? Your dog too !</p>
+    <%= render "search_form" %>
+  </div>
+</div>
 
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="text-center padded features">
+            <%= image_tag "" %>
+            <h2>So simple !</h2>
+            <p>No more questions about your dog holidays.</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="text-center padded features">
+            <%= image_tag "" %>
+            <h2>No money</h2>
+            <p>Collaborative system is our way.</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="text-center padded features">
+            <%= image_tag "" %>
+            <h2>Share and love</h2>
+            <p>Join a community who loves dogs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="contact text-center padded">
+      <h2>Get news from us</h2>
+      <p>Leave us your mail and get news from us</p>
+      <form class="form-inline">
+        <input type="text" class="form-control" placeholder="bob@gmail.com">
+        <input type="submit" class="btn btn-primary" value="OK">
+      </form>
+    </div>
