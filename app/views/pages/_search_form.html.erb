@@ -1,19 +1,11 @@
-<form id="search_form" action="<%= kennels_path %>" method="get">
+<form action="<%= kennels_path %>" class="form-inline"  method="get">
 
-  <div>
-    <input type="text" name="city" id="city" placeholder="Where ?">
-   </div>
+  <input type="text" class="form-control input-lg" name="city" id="city" placeholder="Where ?">
 
-   <div>
-     <input type="text" name="start_date" id="start_date" placeholder="mm-dd-yyyy">
-   </div>
+  <input type="text" class="form-control input-lg" name="start_date" id="start_date" placeholder="dd-mm-yyyy">
 
-   <div>
-    <input type="text" name="end_date" id="end_date" placeholder="mm-dd-yyyy">
-   </div>
+  <input type="text" class="form-control input-lg" name="end_date" id="end_date" placeholder="dd-mm-yyyy">
 
-  <div>
-    <input type="submit" value="Search now">
-  </div>
-
+  <input type="submit" class="btn-primary btn-lg" value="Search now">
+<!--   Insérer éventuellement un icon pate de chien (fa.paw) ? -->
 </form>
