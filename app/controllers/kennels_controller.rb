@@ -1,6 +1,8 @@
 class KennelsController < ApplicationController
+  before_action :set_kennl, only: [:show, :edit, :update, :destroy]
+
   def index
-    @kennels = Kennel.all
+    # http://localhost:3000/kennels?city=Lyon&start_date=06-12-2017&end_date=06-18-2017
   end
 
   def show
