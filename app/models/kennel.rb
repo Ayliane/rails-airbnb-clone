@@ -4,4 +4,5 @@ class Kennel < ApplicationRecord
 
   validates :address, presence: true
   validates :description, presence: true
+  validates :city, presence: true
 end
