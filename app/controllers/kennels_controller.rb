@@ -1,4 +1,5 @@
 class KennelsController < ApplicationController
+
   def index
     @kennels = Kennel.all
   end
@@ -7,9 +8,16 @@ class KennelsController < ApplicationController
   end
 
   def new
+    @kennel = Kennel.new()
   end
 
   def create
+    @kennel = Kennel.new(kennels_params)
+      if @kennel.save
+        redirect_to kennel_path(@kennel)
+      else
+        render :new
+      end
   end
 
   def edit

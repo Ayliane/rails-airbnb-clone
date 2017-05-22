@@ -1,0 +1,12 @@
+<h1>new kennel</h1>
+
+
+<%= simple_form_for(@kennel) do |f| %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.input :habits %>
+  <%= f.input :garden %>
+  <%= f.input :childs_around %>
+  <%= f.input :other_animal %>
+  <%= f.submit %>
+<% end %>
