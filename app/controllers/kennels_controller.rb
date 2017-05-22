@@ -14,7 +14,7 @@ class KennelsController < ApplicationController
   def create
     @kennel = Kennel.new(kennels_params)
       if @kennel.save
-        redirect_to kennel_path(@kennel)
+        redirect_to kennels_path
       else
         render :new
       end
