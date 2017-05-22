@@ -2,7 +2,7 @@ class KennelsController < ApplicationController
   before_action :set_kennl, only: [:show, :edit, :update, :destroy]
 
   def index
-    @kennels = Kennel.where("city AND start_date AND end_date iLike ?", params[:city], params[:start_date], params[:end_date])
+    @kennels = Kennel.where("city AND start_date AND end_date iLike ?, ?, ?", params[:city], params[:start_date], params[:end_date])
   end
 
   def show
