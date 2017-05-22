@@ -2,10 +2,13 @@
   <div class="row">
     <div class="col-xs-12">
 
-      <% @kennels.each do |kennel| %>
-      <%= kennel.description %>
-      <% end %>
+    <h2>Available kennels in <%= params[:city] %></h2>
 
+    <ul>
+      <% @kennels.each do |kennel| %>
+        <li><%= link_to kennel.description, kennel_path(kennel[:id]) %></li>
+      <% end %>
+    </ul>
     </div>
   </div>
 </div>
