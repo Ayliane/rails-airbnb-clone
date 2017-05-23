@@ -2,7 +2,7 @@ class KennelsController < ApplicationController
   before_action :set_kennel, only: [:show, :edit, :update, :destroy]
 
   def index
-    genuine_kennels = Kennel.where(city: params[:city])
+    genuine_kennels = Kennel.where("city iLike ?", params[:city])
     @kennels = []
     genuine_kennels.each do |kennel|
       if kennel.bookings.blank?
