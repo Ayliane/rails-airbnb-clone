@@ -2,16 +2,16 @@
   <div class = "container text-center ">
     <div class = "row">
       <div class = "col-xs-12 col-sm-offset-4 col-sm-4 ">
-        <h1>new kennel</h1>
+        <h2>Add a new dog sitting offer</h2>
         <%= simple_form_for(@kennel) do |f| %>
           <%= f.input :address %>
-          <%= f.input :description %>
-          <%= f.input :habits %>
-          <%= f.input :other_animal %>
           <%= f.input :city %>
-          <%= f.input :garden %>
-          <%= f.input :childs_around %>
-          <%= f.submit %>
+          <%= f.input :description %>
+          <%= f.input :habits, label: "Your habits with dogs" %>
+          <%= f.input :other_animal, label: "How many other animals do you have ?", class: "radiobox" %>
+          <%= f.input :garden, as: :radio_buttons, label: 'Do you have a garden ?', class: "radiobox" %>
+          <%= f.input :childs_around, as: :radio_buttons,  label: 'Do you have childs at home ?' %>
+          <%= f.submit "Submit my offer" %>
         <% end %>
       </div>
     </div>
