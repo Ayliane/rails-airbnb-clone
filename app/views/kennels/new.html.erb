@@ -1,0 +1,19 @@
+<div class = "background">
+  <div class = "container text-center ">
+    <div class = "row">
+      <div class = "col-xs-12 col-sm-offset-4 col-sm-4 ">
+        <h1>new kennel</h1>
+        <%= simple_form_for(@kennel) do |f| %>
+          <%= f.input :address %>
+          <%= f.input :description %>
+          <%= f.input :habits %>
+          <%= f.input :other_animal %>
+          <%= f.input :city %>
+          <%= f.input :garden %>
+          <%= f.input :childs_around %>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

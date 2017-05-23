@@ -1,19 +1,13 @@
-<form id="search_form" action="<%= kennels_path %>" method="get">
+<form action="<%= kennels_path %>" class="form-inline search"  method="get">
 
-  <div>
-    <input type="text" name="city" id="city" placeholder="Where ?">
-   </div>
+  <input type="text" class="form-control input-lg search-input" name="city" id="city" placeholder="Where ?">
 
-   <div>
-     <input type="text" name="start_date" id="start_date" placeholder="mm-dd-yyyy">
-   </div>
+  <input type="text" class="form-control input-lg search-input" name="start_date" id="start_date" placeholder="dd-mm-yyyy">
 
-   <div>
-    <input type="text" name="end_date" id="end_date" placeholder="mm-dd-yyyy">
-   </div>
+  <input type="text" class="form-control input-lg search-input" name="end_date" id="end_date" placeholder="dd-mm-yyyy">
 
-  <div>
-    <input type="submit" value="Search now">
-  </div>
 
+  <button type="submit" class="btn btn-primary btn-lg">
+  <i class="fa fa-paw"></i>
+  </button>
 </form>
