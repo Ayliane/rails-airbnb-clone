@@ -6,9 +6,9 @@
         <p class="text-center"><strong>Description : </strong><%= @kennel.description %></p>
         <p class="text-center"><strong>Address :</strong> <%= @kennel.address %></p>
         <p class="text-center"><strong><%= @kennel.user.first_name %>'s habits :</strong> <%= @kennel.habits %></p>
-        <p class="text-center"><strong>Garden :</strong><%= @kennel.garden %></p>
-        <p class="text-center"><strong>Childs around :</strong><%= @kennel.childs_around %></p>
-        <p class="text-center"><strong>Other animals :</strong><%= @kennel.other_animal %></p>
+        <p class="text-center"><strong>Garden : </strong><%= yesno(@kennel.garden) %></p>
+        <p class="text-center"><strong>Childs around : </strong><%= yesno(@kennel.childs_around) %></p>
+        <p class="text-center"><strong>Other animals : </strong><%= @kennel.other_animal %></p>
         <p class="text-center"><i>Contact info : <%= @kennel.user.first_name %> <%= @kennel.user.last_name %></i></p>
         <div class="text-center booking">
         <%= link_to "Book this kennel", new_kennel_booking_path(@kennel), class: "btn btn-primary" %>
