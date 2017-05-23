@@ -3,10 +3,26 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
+  def show
+    @booking = Booking.find(params[:booking_id])
+  end
+
   def new
+    @kennel = Kennel.find(params[:kennel_id])
+    @booking = Booking.new
   end
 
   def create
+    @kennel = Kennel.find(params[:kennel_id])
+    @user = current_user
+    @booking = Booking.new(booking_params)
+    @booking.kennel = @kennel
+    @booking.user = @user
+    if @booking.save
+      redirect_to @booking
+    else
+      render :new
+    end
   end
 
   def edit
