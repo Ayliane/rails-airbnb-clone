@@ -24,7 +24,7 @@ class KennelsController < ApplicationController
     @kennel.user = current_user
 
     if @kennel.save
-      redirect_to kennels_path
+      redirect_to kennel_path(@kennel)
     else
       render :new
     end
