@@ -1,4 +1,5 @@
 class KennelsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_kennel, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -23,7 +24,7 @@ class KennelsController < ApplicationController
     @kennel.user = current_user
 
     if @kennel.save
-      redirect_to kennels_path
+      redirect_to kennel_path(@kennel)
     else
       render :new
     end

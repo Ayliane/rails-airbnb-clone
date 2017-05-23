@@ -5,4 +5,5 @@ class UsersController < ApplicationController
   def product_params
     params.require(:user).permit(photos: [])
   end
+
 end
