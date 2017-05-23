@@ -28,3 +28,6 @@ module RailsAirbnbClone
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+require "sprockets/railtie"
+require "attachinary/orm/active_record"
