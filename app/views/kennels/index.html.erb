@@ -7,6 +7,7 @@
     <ul>
       <% @kennels.each do |kennel| %>
         <li><%= link_to kennel.description, kennel_path(kennel[:id]) %></li>
+        <li><%= link_to "Destroy", kennels_path %></li>
       <% end %>
     </ul>
     </div>
