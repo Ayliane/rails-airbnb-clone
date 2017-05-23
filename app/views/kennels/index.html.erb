@@ -6,7 +6,12 @@
 
     <ul>
       <% @kennels.each do |kennel| %>
-        <li><%= link_to kennel.description, kennel_path(kennel[:id]) %></li>
+        <li>
+        <%= link_to kennel_path(kennel[:id]) do %>
+          <h4><%= kennel.user.first_name.capitalize %>'s Kennel Offer</h4>
+        <% end %>
+        <p><%= kennel.description %></p>
+        </li>
       <% end %>
     </ul>
     </div>

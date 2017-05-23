@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="kennel_presentation">
+        <h2 class="text-center"><%= @kennel.user.first_name %>'s kennel offer</h2>
+        <p class="text-center"><strong>Description : </strong><%= @kennel.description %></p>
+        <p class="text-center"><strong>Address :</strong> <%= @kennel.address %></p>
+        <p class="text-center"><strong><%= @kennel.user.first_name %>'s habits :</strong> <%= @kennel.habits %></p>
+        <p class="text-center"><strong>Garden :</strong><%= @kennel.garden %></p>
+        <p class="text-center"><strong>Childs around :</strong><%= @kennel.childs_around %></p>
+        <p class="text-center"><strong>Other animals :</strong><%= @kennel.other_animal %></p>
+        <p class="text-center"><i>Contact info : <%= @kennel.user.first_name %> <%= @kennel.user.last_name %></i></p>
+      </div>
+    </div>
+  </div>
+</div>
