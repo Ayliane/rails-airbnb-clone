@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="booking_confirmation">
+        <h2 class="text-center">Here's your booking summary</h2>
+        <p class="text-center"><strong>Start Date : </strong><%= @booking.start_date.to_date %></p>
+        <p class="text-center"><strong>End Date :</strong> <%= @booking.end_date.to_date %></p>
+        <p class="text-center"><strong>Confirmation status :</strong> <%= @booking.confirmation_status %></p>
+        <p class="text-center"><strong>The Kennel address : </strong><%= @booking.kennel.address %></p>
+        <p class="text-center"><strong>Your dog sitter : </strong><%= @booking.kennel.user.first_name %> <%= @booking.kennel.user.last_name %></p>
+        <div class="text-center">
+        <%= link_to "Back to home page", root_path, class: "btn btn-primary" %>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
