@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-xs-offset-4  col-sm-6 col-md-4">
-      <div class="registration-box">
+      <div class="login-box">
         <div class="sign-in-head">
           <div class="text-center" id="fb-link">
             <%= render "devise/shared/facebook_link" %>
@@ -18,10 +18,12 @@
         </div>
 
         <div class="form-actions text-center">
-          <%= f.button :submit, "Sign in" %>
+          <%= f.button :submit, "Sign in", class: "login-button" %>
         </div>
         <% end %>
+        <br>
 
+        <div><p id="join-us">Not in our community yet ? Join us and <%= render "devise/shared/signup_link" %></p></div>
         <%= render "devise/shared/links" %>
       </div>
     </div>
