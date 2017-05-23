@@ -36,6 +36,8 @@ class KennelsController < ApplicationController
   end
 
   def destroy
+    @kennel.destroy
+    redirect_to kennels_path
   end
 
   private
