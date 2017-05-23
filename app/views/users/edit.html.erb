@@ -1,0 +1,8 @@
+<h2>edit users<h2>
+
+<%= simple_form_for(@user) do |f| %>
+  <%= f.input :photos, as: :attachinary %>
+  <% @user.photos.each do |photo| %>
+  <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+  <% end %>
+<% end %>
