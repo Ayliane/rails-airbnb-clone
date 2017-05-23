@@ -10,15 +10,21 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-    <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+    <%=
+    #f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false
+    %>
+    <%=
+    #f.input :password_confirmation, required: false
+    %>
+    <%=
+    #f.input :current_password, hint: "we need your current password to confirm your changes", required: true
+    %>
     <%= f.input :photos, as: :attachinary %>
-  </div>
+    <% current_user.photos.each do |photo| %>
+          <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+          <% end %>
 
-  <% @product.photos.each do |photo| %>
-  <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
-<% end %>
+  </div>
 
   <div class="form-actions">
     <%= f.button :submit, "Update" %>
