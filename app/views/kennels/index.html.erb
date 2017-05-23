@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12">
 
-    <h2>Available kennels in <%= params[:city] %></h2>
+    <h2>Available kennels in <%= params[:city].capitalize %></h2>
 
     <ul>
       <% @kennels.each do |kennel| %>
