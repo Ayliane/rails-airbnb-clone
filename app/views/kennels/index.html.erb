@@ -7,7 +7,6 @@
     <ul>
       <% @kennels.each do |kennel| %>
         <li><%= link_to kennel.description, kennel_path(kennel[:id]) %></li>
-        <li><%= link_to 'Delete', kennel_path(kennel), method: :delete %></li>
       <% end %>
     </ul>
     </div>
