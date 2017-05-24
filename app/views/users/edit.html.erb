@@ -1,0 +1,6 @@
+<h2>edit user<h2>
+
+<%= simple_form_for(@user) do |f| %>
+  <%= f.input :photo, as: :attachinary %>
+  <%= f.submit %>
+<% end %>
