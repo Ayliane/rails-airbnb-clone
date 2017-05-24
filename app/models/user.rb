@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :kennels
   has_many :bookings
 
-  has_attachments :photos, maximum: 2
+  has_attachment :photo
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)

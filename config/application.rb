@@ -29,5 +29,4 @@ module RailsAirbnbClone
   end
 end
 
-require "sprockets/railtie"
 require "attachinary/orm/active_record"
