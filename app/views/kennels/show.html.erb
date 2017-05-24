@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="kennel_presentation">
+        <%= cl_image_tag @kennel.photo.path, width: 200, height: 300, crop: :fill %>
         <h2 class="text-center"><%= @kennel.user.first_name %>'s kennel offer</h2>
         <p class="text-center"><strong>Description : </strong><%= @kennel.description %></p>
         <p class="text-center"><strong>Address :</strong> <%= @kennel.address %></p>
