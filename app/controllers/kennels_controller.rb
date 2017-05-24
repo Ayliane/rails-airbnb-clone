@@ -15,6 +15,8 @@ class KennelsController < ApplicationController
   end
 
   def show
+    @flat = Flat.find(params[:id])
+    @flat_coordinates = { lat: @flat.latitude, lng: @flat.longitude }
   end
 
   def new
