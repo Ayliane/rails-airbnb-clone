@@ -7,10 +7,10 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "vendor/index";
+@import "vendor/*";
 
 // Your CSS
-@import "layout/index";
-@import "components/index";
-@import "pages/index";
-@import "auth/index";
+@import "layout/*";
+@import "components/*";
+@import "pages/*";
+@import "auth/*";
