@@ -1,0 +1,56 @@
+.cover-show {
+  height: 350px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h2 {
+    color: $site-background-color;
+    text-shadow: 0.5px 0.5px $light-grey;
+    font-size: 35px;
+  }
+}
+
+.booking {
+  margin-top: 40px;
+}
+
+.kennel_presentation {
+  margin: 25px 0;
+  color: #333333;
+}
+
+.media {
+  display: flex;
+}
+.media-body {
+  flex: 1 1 auto;
+  padding: 20px;
+  height: 400px;
+  width: 30%;
+  background: #F8F7F7;
+}
+
+.media-aside {
+  flex: 0 0 400px;
+  padding: 30px;
+  align-self: stretch;
+  background: #F8F7F7;
+  border-left: 2px solid #f0efef;
+}
+.media-section {
+  margin: 40px auto;
+  h2 {
+    color: $gray;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 22px;
+    text-transform: uppercase;
+  }
+}
+.media-section:first-child {
+  margin-top: 0;
+}
+.media-section:last-child {
+  margin-bottom: 0;
+}
