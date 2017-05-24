@@ -16,6 +16,8 @@ class BookingsController < ApplicationController
     @kennel = Kennel.find(params[:kennel_id])
     @user = current_user
     @booking = Booking.new(booking_params)
+    # @booking.start_date = session[:start_date]
+    # @booking.end_date = session[:end_date]
     @booking.kennel = @kennel
     @booking.user = @user
     if @booking.save
