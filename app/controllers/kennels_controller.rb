@@ -3,6 +3,8 @@ class KennelsController < ApplicationController
   before_action :set_kennel, only: [:show, :edit, :update, :destroy]
 
   def index
+    session[:start_date] = params[:start_date]
+    session[:end_date] = params[:end_date]
     genuine_kennels = Kennel.where("city iLike ?", params[:city])
     @kennels = []
     genuine_kennels.each do |kennel|
