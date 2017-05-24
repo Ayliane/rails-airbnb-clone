@@ -4,9 +4,9 @@
  * ------------------------------------- */
 
 body {
-  margin: 0;
   font-family: Open-sans, sans-serif;
 }
+
 h1, h2, h3 {
   font-family: Raleway, Helvetica, sans-serif;
 }
@@ -25,6 +25,12 @@ h2 {
   margin-bottom: 30px;
   margin-top: 0;
 }
+
+.wrapper {
+  margin-top: $navbar-height;
+  min-height: calc(100vh - #{$footer-height} - #{$navbar-height});
+}
+
 .padded {
   padding: 100px 0;
 }

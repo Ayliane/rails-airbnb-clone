@@ -4,10 +4,15 @@
   background: white;
   transition: all 0.3s ease;
   display: flex;
-  height: 70px;
+  height: $navbar-height;
   padding: 0px 30px;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  width: 100%;
 }
 
 /* Optional class to fix the navbar on top */
@@ -21,7 +26,7 @@
 
 /* Navbar logo */
 .navbar-wagon-brand img {
-  width: 50px;
+  width: 180px;
 }
 
 /* Navbar right section (with form, links, button) */

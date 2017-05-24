@@ -1,15 +1,31 @@
-<h2>Log in</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-xs-offset-4  col-sm-6 col-md-4">
+      <div class="login-box">
+        <div class="sign-in-head">
+          <div class="text-center" id="fb-link">
+            <%= render "devise/shared/facebook_link" %>
+          </div>
+          <div class="text-center" id="sign-in-or"><h2>OR</h2></div>
+        </div>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email, required: false, autofocus: true %>
+          <%= f.input :password, required: false %>
+          <%= render "devise/shared/forgot_password_link" %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        </div>
+
+        <div class="form-actions text-center">
+          <%= f.button :submit, "Sign in", class: "login-button" %>
+        </div>
+        <% end %>
+        <br>
+
+        <div><p id="join-us">Not part of our community yet ? Join us and <%= render "devise/shared/signup_link" %></p></div>
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
