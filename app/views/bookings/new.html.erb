@@ -1,11 +1,14 @@
 <p>Please, wait while we are booking your kennel !</p>
 
+<!-- Fabriquer un simple form "hiden" -->
+
 <%= simple_form_for ([@kennel, @booking]), html: { class: "hidden-form" } do |f| %>
   <%= f.hidden_field :start_date, value: session[:start_date], as: :date %>
   <%= f.hidden_field :end_date, value: session[:end_date], as: :date %>
   <%= f.button :submit, style: "display: none;" %>
 <% end %>
 
+<!-- Le form est envoyé (post request) + temps de chargement factice -->
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
