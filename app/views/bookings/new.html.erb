@@ -1,6 +1,23 @@
-<%= simple_form_for ([@kennel, @booking]), html: { class: "hidden-form" } do |f| %>
-  <%= f.input :message, label: "Leave a message to your dog sitter :" %>
-  <%= f.hidden_field :start_date, value: session[:start_date], as: :date %>
-  <%= f.hidden_field :end_date, value: session[:end_date], as: :date %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class="booking-box">
+
+        <%= simple_form_for ([@kennel, @booking]), html: { class: "hidden-form" } do |f| %>
+
+          <div class="form-inputs">
+            <%= f.input :message, label: "Leave a message to your dog sitter :", :input_html => {:rows => 7} %>
+            <%= f.hidden_field :start_date, value: session[:start_date], as: :date %>
+            <%= f.hidden_field :end_date, value: session[:end_date], as: :date %>
+          </div>
+
+          <div class="form-actions text-center">
+            <%= f.button :submit, class: "booking-button", value: "Book now" %>
+          </div>
+
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
