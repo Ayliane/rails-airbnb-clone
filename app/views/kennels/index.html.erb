@@ -1,19 +1,20 @@
-<div class="container">
+<div class="text-center" id="head-index"><h2>Available kennels in <%= params[:city].capitalize %></h2></div>
+
+<div class="container results-index">
   <div class="row">
-    <div class="col-xs-12">
-
-    <h2>Available kennels in <%= params[:city].capitalize %></h2>
-
     <ul>
       <% @kennels.each do |kennel| %>
-        <li>
-        <%= link_to kennel_path(kennel[:id]) do %>
-          <h4><%= kennel.user.first_name.capitalize %>'s Kennel Offer</h4>
-        <% end %>
-        <p><%= kennel.description %></p>
-        </li>
+        <div class="col-xs-6">
+          <div class="kennel-card"   style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path kennel.photo.path, height: 300, width: 400, crop: :fill %>')">
+            <div class="card-name"><h4><%= kennel.user.first_name.capitalize %>'s holidog.</h4>
+            </div>
+            <div class="card-description"><p><%= kennel.description %></p></div>
+            <% avatar_url = "http://unsplash.it/30x30" %>
+            <%= image_tag avatar_url, class: "card-user avatar avatar-large" %>
+            <%= link_to '', kennel, class: "card-link" %>
+          </div>
+        </div>
       <% end %>
     </ul>
-    </div>
   </div>
 </div>
