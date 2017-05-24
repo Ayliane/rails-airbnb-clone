@@ -1,19 +1,17 @@
+<h2>Available kennels in <%= params[:city].capitalize %></h2>
+
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
-
-    <h2>Available kennels in <%= params[:city].capitalize %></h2>
-
     <ul>
       <% @kennels.each do |kennel| %>
-        <li>
-        <%= link_to kennel_path(kennel[:id]) do %>
-          <h4><%= kennel.user.first_name.capitalize %>'s Kennel Offer</h4>
-        <% end %>
-        <p><%= kennel.description %></p>
-        </li>
+      <div class="col-xs-3">
+        <div class="cocktail-card"   style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= %>')">
+          <%= link_to kennel_path(kennel[:id]) do %>
+          <div><h4><%= kennel.user.first_name.capitalize %>'s Kennel Offer</h4></div>
+          <% end %>
+          <p><%= kennel.description %></p>
+      </div>
       <% end %>
     </ul>
-    </div>
   </div>
 </div>
