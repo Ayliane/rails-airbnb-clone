@@ -48,6 +48,6 @@ class KennelsController < ApplicationController
   end
 
   def kennels_params
-    params.require(:kennel).permit(:address, :description, :city, :habits, :garden, :childs_around, :other_animal)
+    params.require(:kennel).permit(:address, :description, :city, :habits, :garden, :childs_around, :other_animal, :photo)
   end
 end
