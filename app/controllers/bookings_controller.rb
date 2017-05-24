@@ -9,11 +9,13 @@ class BookingsController < ApplicationController
 
   def new
     session[:message] = params[:message]
+    binding.pry
     @kennel = Kennel.find(params[:kennel_id])
     @booking = Booking.new
   end
 
   def create
+    binding.pry
     @kennel = Kennel.find(params[:kennel_id])
     @user = current_user
     @booking = Booking.new(booking_params)
