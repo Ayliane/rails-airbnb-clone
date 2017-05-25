@@ -3,8 +3,6 @@ class BookingsController < ApplicationController
     @user = User.find(params[:user_id])
     @bookings_demands = Booking.where(user: @user)
     @booking_offers = Booking.where(kennel: @user.kennel)
-    # @kennels = Kennel.where(user_id: current_user.id)
-    # @bookings_offers = Booking.where(kennel: @kennel)
   end
 
   def show
