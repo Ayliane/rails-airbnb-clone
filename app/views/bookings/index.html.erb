@@ -1,0 +1,114 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-xs-offset-2">
+      <div class="wraping-up">
+
+        <h2>My bookings</h2>
+
+
+        <h3>Mes demandes de garde</h3>
+        <br>
+
+        <div class="table">
+
+          <div class="row header">
+            <div class="cell">
+              From
+            </div>
+            <div class="cell">
+              To
+            </div>
+            <div class="cell">
+              Dog sitter
+            </div>
+            <div class="cell">
+              Your message
+            </div>
+            <div class="cell">
+              Confirmation Status
+            </div>
+          </div>
+
+          <% if @bookings_demands.blank? %>
+            </div>
+            <p class="text-center">You have no vacation planned for your dog :)</p>
+
+          <% else %>
+
+            <% @bookings_demands.each do |booking| %>
+              <div class="row">
+                <div class="cell">
+                  <%= (booking.start_date).strftime("%B %d, %Y") %>
+                </div>
+                <div class="cell">
+                  <%= (booking.end_date).strftime("%B %d, %Y") %>
+                </div>
+                <div class="cell">
+                  <%= booking.kennel.user.first_name %> <%= booking.kennel.user.last_name %>
+                </div>
+                <div class="cell">
+                  <%= booking.message %>
+                </div>
+                <div class="cell">
+                  <%= booking.confirmation_status %>
+                </div>
+              </div>
+            <% end %>
+        </div>
+          <% end %>
+
+      <br>
+      <h3>Mes offres de garde</h3>
+      <br>
+
+      <div class="table">
+
+        <div class="row header">
+          <div class="cell">
+            From
+          </div>
+          <div class="cell">
+              To
+          </div>
+          <div class="cell">
+              Dog owner
+          </div>
+          <div class="cell">
+              Owner's message
+          </div>
+          <div class="cell">
+              Confirmation Status
+          </div>
+        </div>
+
+        <% if @bookings_offers.present? %>
+          </div>
+          <p class="text-center">Nobody asked you to dog-sit yet !</p>
+
+        <% else %>
+
+          <% @booking_offers.each do |offer| %>
+          <div class="row">
+            <div class="cell">
+              <%= (offer.start_date).strftime("%B %d, %Y") %>
+            </div>
+            <div class="cell">
+              <%= (offer.end_date).strftime("%B %d, %Y") %>
+            </div>
+            <div class="cell">
+              <%= offer.user.first_name %> <%= offer.user.last_name %>
+            </div>
+            <div class="cell">
+              <%= offer.message %>
+            </div>
+            <div class="cell">
+              <%= offer.confirmation_status %>
+            </div>
+          </div>
+          <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
