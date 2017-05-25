@@ -6,7 +6,15 @@
   background-color: #F1F1F1;
   margin-top: 100px;
   margin-bottom: 100px;
+
+  font-weight: normal;
+  padding-right: 20px;
+
+  input[type=radio] {
+    margin: 3px 5px 0px 25px;
+  }
 }
+
 
 .registration-button {
   margin-left: 10px;
