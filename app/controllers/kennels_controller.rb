@@ -5,7 +5,8 @@ class KennelsController < ApplicationController
   def index
     session[:start_date] = params[:start_date]
     session[:end_date] = params[:end_date]
-    genuine_kennels = Kennel.where("city iLike ?", params[:city])
+    genuine_kennels = Kennel.near(params[:city], 20)
+    # where("city iLike ?", params[:city])
     @kennels = []
     genuine_kennels.each do |kennel|
       if kennel.bookings.blank?
