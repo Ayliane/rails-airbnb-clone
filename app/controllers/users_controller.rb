@@ -9,10 +9,10 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.new(user_params)
+    @user = User.find(params[:id])
 
-      if @user.save(user_params)
-        redirect_to kennels_path
+      if @user.update(user_params)
+        redirect_to user_path(@user)
       else
         render :edit
       end
@@ -21,6 +21,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:last_name, :first_name, :email, :photo, :password)
+    params.require(:user).permit(:last_name, :first_name, :email, :photo, :password, :dog_name)
   end
 end
