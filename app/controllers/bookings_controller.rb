@@ -1,6 +1,18 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @user = User.find(params[:user_id])
+    @bookings_demands = Booking.where(user: @user)
+    @booking_offers = Booking.where(kennel: @user.kennel)
+  end
+
+  def toggle
+    @booking = Booking.find(params[:booking_id])
+
+    if @booking.update_attributes(:confirmation_status => params[:confirmation_status])
+      @booking.save
+    else
+      set_flash "Error, please try again"
+    end
   end
 
   def show

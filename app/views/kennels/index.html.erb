@@ -8,7 +8,7 @@
           <div class="kennel-card"   style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path kennel.photo.path, height: 300, width: 400, crop: :fill %>')">
             <div class="card-name"><h4><%= kennel.user.first_name.capitalize %>'s holidog.</h4>
             </div>
-            <div class="card-description"><p><%= kennel.description %></p></div>
+
             <% avatar_url = "http://unsplash.it/30x30" %>
             <%= image_tag avatar_url, class: "card-user avatar avatar-large" %>
             <%= link_to '', kennel, class: "card-link" %>

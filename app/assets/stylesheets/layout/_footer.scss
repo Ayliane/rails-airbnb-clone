@@ -13,15 +13,22 @@
 #footer ul {
   margin-top: 10px;
 }
-#footer a {
+.list-inline a {
   color: #CCCCCC;
   font-size: 30px;
   transition: color 0.5s ease;
 }
+
 #footer a:hover{
   color: $blue;
 }
 
 .about {
-  font-size: 20px
+  color: #CCCCCC;
+  font-size: 15px;
+  transition: color 0.5s ease;
+  &:hover {
+    text-decoration: none;
+    color: $blue;
+  }
 }

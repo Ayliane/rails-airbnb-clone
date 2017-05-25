@@ -1,0 +1,89 @@
+.profile-box {
+  border: 1px solid #999999;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  background-color: #F1F1F1;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  // display: flex;
+  // position: relative;
+  padding-left: 12px;
+  padding-right: 12px;
+  // width: 25%;
+  // float: left;
+}
+
+.profile-button {
+  margin-left: 10px;
+  padding: 0 20px;
+  border-radius: 20em;
+  line-height: 40px;
+  background-color: $blue;
+  color: white;
+  font-size: 14px;
+  border: 2px solid $blue;
+}
+.profile-button:hover {
+  color: white;
+  background: $blue;
+  border-color: $blue;
+}
+
+.profile-head {
+  // position: absolute;
+  left: 90px;
+  top: 30px;
+
+}
+
+.profile-img {
+  flex: 0 0 100px;
+  margin-left: 60px;
+  margin-right: 60px;
+
+  // min-height: 1px;
+  // padding-left: 12px;
+  // padding-right: 12px;
+  // width: 25%;
+  // float: left;
+}
+
+.profile-picture {
+  flex: 0 1 150px;
+  margin-left: 50px;
+  min-height: 1px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 50%;
+}
+
+
+.profile-infos {
+  flex: 0 0 500px;
+  padding-left: 50px;
+  padding-top: 40px;
+
+}
+
+.profile-info {
+  list-style: none;
+  // position: absolute;
+  left: 15px;
+  top: 50px;
+}
+
+#profile-div {
+  display: flex;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+.edit-profile-btn {
+  // position: absolute;
+  right: 15px;
+  top: 15px;
+}
