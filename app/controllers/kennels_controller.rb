@@ -16,8 +16,8 @@ class KennelsController < ApplicationController
 
   def show
     @kennel = Kennel.find(params[:id])
-    @alert_message = "You are viewing #{@kennel.address}"
-    # @kennel_coordinates = { lat: @kennel.latitude, lng: @kennel.longitude }
+    # @alert_message = "You are viewing #{@kennel.address}"
+    @kennel_coordinates = { lat: @kennel.latitude, lng: @kennel.longitude }
   end
 
   def new
