@@ -1,3 +1,17 @@
-<% @bookings.each do |booking| %>
-  <%= booking.kennel.user.first_name %>
+<h2>My bookings</h2>
+
+
+<h3>Manage my kennels demands</h3>
+
+<ul>
+<% @bookings_demands.each do |booking| %>
+  <li><%= booking.kennel.user.first_name %></li>
+<% end %>
+</ul>
+
+
+<h3>Manage my kennel offers</h3>
+
+<% @booking_offers.each do |offer| %>
+  <%= offer.kennel.user.first_name %>
 <% end %>
