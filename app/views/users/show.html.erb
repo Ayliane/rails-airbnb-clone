@@ -2,13 +2,29 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="profile-box">
-        <h2 class="text-center profile-head">Hello my name is <%= @user.first_name %> ! </h2>
-        <% avatar_url = current_user.facebook_picture_url || "http://unsplash.it/30x30" %>
-        <%= image_tag avatar_url, class: "profile-img avatar-large"%>
-        <div class="profile-info">
-        <ul>
-          <liclass="text-center"><strong>First  name : </strong><%= @user.first_name %></li>
-        </ul>
+        <div>
+          <h2 class="text-center profile-head">Hello my name is <%= @user.first_name %> !
+          </h2>
+        </div>
+        <div class="row" id="profile-div">
+<!--           <div class="profile-img"> -->
+            <% avatar_url = current_user.facebook_picture_url || "http://unsplash.it/30x30" %>
+            <%= image_tag avatar_url, class: "profile-picture"%>
+          <!-- </div> -->
+          <div class="profile-infos">
+            <ul>
+              <li class="profile-info"><strong>First name : </strong><%= @user.first_name %>
+              </li>
+              <li class="profile-info"><strong>Last name : </strong><%= @user.last_name %>
+              </li>
+              <li class="profile-info"><strong>Email : </strong><%= @user.email %>
+              </li>
+              <li class="profile-info"><strong>Dog name : </strong><%= @user.dog_name %>
+              </li>
+              <li class="profile-info"><strong>Member since : </strong><%= @user.created_at %>
+              </li>
+            </ul>
+          </div>
         </div>
         <div class="text-center edit-profile-btn">
           <%= link_to "Edit my profile", edit_user_path, class: "btn btn-primary" %>
