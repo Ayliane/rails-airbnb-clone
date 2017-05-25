@@ -101,7 +101,10 @@
               <%= offer.message %>
             </div>
             <div class="cell">
-              <%= offer.confirmation_status %>
+              <label class="switch">
+                <input type="checkbox">
+                <div class="slider round"> <%= offer.confirmation_status %> </div>
+              </label>
             </div>
           </div>
           <% end %>
