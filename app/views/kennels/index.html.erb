@@ -2,19 +2,43 @@
 
 <div class="container results-index">
   <div class="row">
-    <ul>
-      <% @kennels.each do |kennel| %>
-        <div class="col-xs-6">
-          <div class="kennel-card"   style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path kennel.photo.path, height: 300, width: 400, crop: :fill %>')">
-            <div class="card-name"><h4><%= kennel.user.first_name.capitalize %>'s holidog.</h4>
-            </div>
+    <div class="col-xs-6 ">
+      <ul>
+        <% @kennels.each do |kennel| %>
+          <div class="col-xs-6">
+            <div class="kennel-card"   style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path kennel.photo.path, height: 300, width: 400, crop: :fill %>')">
+              <div class="card-name"><h4><%= kennel.user.first_name.capitalize %>'s holidog.</h4>
+              </div>
 
-            <% avatar_url = "http://unsplash.it/30x30" %>
-            <%= image_tag avatar_url, class: "card-user avatar avatar-large" %>
-            <%= link_to '', kennel, class: "card-link" %>
+              <% avatar_url = "http://unsplash.it/30x30" %>
+              <%= image_tag avatar_url, class: "card-user avatar avatar-large" %>
+              <%= link_to '', kennel, class: "card-link" %>
+            </div>
           </div>
-        </div>
-      <% end %>
-    </ul>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-xs-6">
+        <div id="map" style="width: 100%; height: 600px;"></div>
+      </div>
   </div>
 </div>
+
+
+<% content_for(:after_js) do %>
+  <script type="text/javascript">
+    $(document).on('ready', function() {
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function(){
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(14);
+        }
+      });
+    });
+  </script>
+<% end %>

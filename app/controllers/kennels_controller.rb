@@ -12,6 +12,14 @@ class KennelsController < ApplicationController
         @kennels << kennel
       end
     end
+
+    @kennels = Kennel.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@kennels) do |kennel, marker|
+      marker.lat kennel.latitude
+      marker.lng kennel.longitude
+      # marker.infowindow render_to_string(partial: "/kennels/map_box", locals: { kennel: kennel })
+    end
   end
 
   def show
