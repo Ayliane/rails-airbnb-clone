@@ -5,6 +5,16 @@ class BookingsController < ApplicationController
     @booking_offers = Booking.where(kennel: @user.kennel)
   end
 
+  def toggle
+    @booking = Booking.find(params[:booking_id])
+
+    if @booking.update_attributes(:confirmation_status => params[:confirmation_status])
+      @booking.save
+    else
+      set_flash "Error, please try again"
+    end
+  end
+
   def show
     @booking = Booking.find(params[:id])
   end
