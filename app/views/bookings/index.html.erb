@@ -6,7 +6,7 @@
         <h2>My bookings</h2>
 
 
-        <h3>Mes demandes de garde</h3>
+        <h3>My dog-sitting demands</h3>
         <br>
 
         <div class="table">
@@ -29,12 +29,7 @@
             </div>
           </div>
 
-          <% if @bookings_demands.blank? %>
-            </div>
-            <p>You have no vacation planned for your dog :)</p>
-
-          <% else %>
-
+          <% if @bookings_demands.nil? %>
             <% @bookings_demands.each do |booking| %>
               <div class="row uniq">
                 <div class="cell">
@@ -54,11 +49,13 @@
                 </div>
               </div>
             <% end %>
+          <% else %>
+            </div>
+            <p>You have no vacation planned for your dog :)</p>
         </div>
           <% end %>
-
       <br>
-      <h3>Mes offres de garde</h3>
+      <h3>My dog-sitting offers</h3>
       <br>
 
       <div class="table">
@@ -81,13 +78,9 @@
           </div>
         </div>
 
-        <% if @bookings_offers.blank? %>
-          </div>
-          <p>Nobody asked you to dog-sit yet !</p>
+        <% if @bookings_offers.nil? %>
 
-        <% else %>
-
-          <% @booking_offers.each do |offer| %>
+                  <% @booking_offers.each do |offer| %>
           <div class="row uniq">
             <div class="cell">
               <%= (offer.start_date).strftime("%B %d, %Y") %>
@@ -106,6 +99,9 @@
             </div>
           </div>
           <% end %>
+          <% else %>
+          </div>
+          <p>Nobody asked you to dog-sit yet !</p>
       </div>
       <% end %>
     </div>
