@@ -75,6 +75,7 @@ second_kennel = Kennel.new(
   user: user_1,
   city: "Toulouse",
   address: "Place du capitole",
+  baseline: "Amazing dog-sitter",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum quam obcaecati, itaque. Sit quo, libero beatae, quam quasi laboriosam quisquam, fugiat ullam eos totam maiores aperiam consectetur illo accusamus enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque odio mollitia voluptates voluptate voluptatem nobis a, necessitatibus dicta praesentium, aliquam, delectus provident qui quae animi ea fuga officiis accusamus ut! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit fugit minus, id ea, sed harum. Possimus magnam quia eaque tempora, maiores nemo, recusandae, commodi cumque, placeat pariatur odio modi nulla!"
 )
 
@@ -85,6 +86,7 @@ third_kennel = Kennel.new(
   user: user_2,
   city: "Lyon",
   address: "3 place Bellecour",
+  baseline: "Wonderfull house for dog",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum quam obcaecati, itaque. Sit quo, libero beatae, quam quasi laboriosam quisquam, fugiat ullam eos totam maiores aperiam consectetur illo accusamus enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque odio mollitia voluptates voluptate voluptatem nobis a, necessitatibus dicta praesentium, aliquam, delectus provident qui quae animi ea fuga officiis accusamus ut! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit fugit minus, id ea, sed harum. Possimus magnam quia eaque tempora, maiores nemo, recusandae, commodi cumque, placeat pariatur odio modi nulla!"
 )
 
@@ -95,6 +97,7 @@ fourth_kennel = Kennel.new(
   user: user_4,
   city: "Lyon",
   address: "18 avenue Paul Bocuse",
+  baseline: "Dogs are my passion !",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum quam obcaecati, itaque. Sit quo, libero beatae, quam quasi laboriosam quisquam, fugiat ullam eos totam maiores aperiam consectetur illo accusamus enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque odio mollitia voluptates voluptate voluptatem nobis a, necessitatibus dicta praesentium, aliquam, delectus provident qui quae animi ea fuga officiis accusamus ut! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit fugit minus, id ea, sed harum. Possimus magnam quia eaque tempora, maiores nemo, recusandae, commodi cumque, placeat pariatur odio modi nulla!"
 )
 
@@ -105,6 +108,7 @@ fifth_kennel = Kennel.new(
   user: user_5,
   city: "Lyon",
   address: "28 place de la tête d'or",
+  baseline: "The dog sitter you need",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum quam obcaecati, itaque. Sit quo, libero beatae, quam quasi laboriosam quisquam, fugiat ullam eos totam maiores aperiam consectetur illo accusamus enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque odio mollitia voluptates voluptate voluptatem nobis a, necessitatibus dicta praesentium, aliquam, delectus provident qui quae animi ea fuga officiis accusamus ut! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit fugit minus, id ea, sed harum. Possimus magnam quia eaque tempora, maiores nemo, recusandae, commodi cumque, placeat pariatur odio modi nulla!"
 )
 
@@ -115,6 +119,7 @@ seventh_kennel = Kennel.new(
   user: user_6,
   city: "Lyon",
   address: "chemin des allouettes",
+  baseline: "Trust me i'm dogous",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum quam obcaecati, itaque. Sit quo, libero beatae, quam quasi laboriosam quisquam, fugiat ullam eos totam maiores aperiam consectetur illo accusamus enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque odio mollitia voluptates voluptate voluptatem nobis a, necessitatibus dicta praesentium, aliquam, delectus provident qui quae animi ea fuga officiis accusamus ut! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit fugit minus, id ea, sed harum. Possimus magnam quia eaque tempora, maiores nemo, recusandae, commodi cumque, placeat pariatur odio modi nulla!"
 )
 
@@ -125,6 +130,7 @@ sixth_kennel = Kennel.new(
   user: user_7,
   city: "Saint-Etienne",
   address: "Rue de la république",
+  baseline: "Best doggy vacation",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum quam obcaecati, itaque. Sit quo, libero beatae, quam quasi laboriosam quisquam, fugiat ullam eos totam maiores aperiam consectetur illo accusamus enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque odio mollitia voluptates voluptate voluptatem nobis a, necessitatibus dicta praesentium, aliquam, delectus provident qui quae animi ea fuga officiis accusamus ut! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit fugit minus, id ea, sed harum. Possimus magnam quia eaque tempora, maiores nemo, recusandae, commodi cumque, placeat pariatur odio modi nulla!"
 )
 
