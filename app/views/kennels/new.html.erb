@@ -3,8 +3,8 @@
     <div class = "row">
       <div class = "col-xs-12 col-sm-offset-3 col-sm-6 ">
         <div class = 'kennel-new-box'>
-        <h2>Add a new dog sitting offer</h2>
-        <%= simple_form_for(@kennel) do |f| %>
+          <h2>Add a new dog sitting offer</h2>
+          <%= simple_form_for(@kennel) do |f| %>
           <%= f.input :address, placeholder: "Address",label: false ,autofocus: true %>
           <%= f.input :city,label: false , placeholder: "City" %>
           <%= f.input :baseline, label:false, placeholder: "Your baseline" %>
@@ -16,11 +16,19 @@
           checked: false, label: 'Do you have a garden ?', class: "radiobox radio-inline" %>
           <%= f.input :childs_around, as: :radio_buttons,
           item_label_class: "radio-inline",item_wrapper_tag: false, checked: false, label: 'Do you have childs at home ?' %>
-          <label class="custom-file-upload">
-          <i class="fa fa-cloud-upload" aria-hidden="true"></i>
-          <%= f.input :photo, type: "file", as: :attachinary %>
-          </label>
-          <%= f.submit "Submit my offer", class: "login-button" %>
+          <div class="row">
+            <div class="col-xs-6">
+            <label class="custom-file-upload">
+              <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+
+              <%= f.input :photo, type: "file", as: :attachinary%>
+            </label>
+            </div>
+            <div class="col-xs-6">
+            <div class="submit-offer">
+            <%= f.submit "Submit my offer", class: "login-button" %>
+            </div>
+            </div>
         </div>
         <% end %>
       </div>
