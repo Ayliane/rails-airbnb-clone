@@ -1,9 +1,9 @@
-function refreshBadge(){
-  $.ajax({
+// function refreshBadge(){
+//   $.ajax({
 
-    url: '/',
-    format: 'js'
-  })
-}
+//     url: '/',
+//     format: 'js'
+//   })
+// }
 
-setInterval(refreshBadge, 1000);
+// setInterval(refreshBadge, 1000);

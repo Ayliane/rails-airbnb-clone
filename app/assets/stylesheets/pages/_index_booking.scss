@@ -8,7 +8,6 @@
 .row.uniq {
   display:table-row;
   background: #f6f6f6;
-  border-bottom: 1px solid $gray;
 }
 
 .row.uniq.header {
@@ -28,6 +27,10 @@
 
 .cell.message {
   width: 35%;
+}
+
+.cell.bottom {
+  border-bottom: 1px solid $nice-grey;
 }
 
 .cell.confirmation {

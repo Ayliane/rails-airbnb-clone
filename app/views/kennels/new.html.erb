@@ -7,6 +7,7 @@
         <%= simple_form_for(@kennel) do |f| %>
           <%= f.input :address, placeholder: "Address",label: false ,autofocus: true %>
           <%= f.input :city,label: false , placeholder: "City" %>
+          <%= f.input :baseline, label:false, placeholder: "Your baseline" %>
           <%= f.input :description,label: false , placeholder: "Description" %>
           <%= f.input :habits,label: false , placeholder: "Your habits with dogs !" %>
           <%= f.input :other_animal, placeholder: "How many other animals do you have ?", label: false, class: "radiobox" %>

@@ -1,5 +1,5 @@
 <div class="cover-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @kennel.photo.path %>');">
-  <h2 class="text-center"><%= @kennel.user.first_name %>'s kennel offer</h2>
+  <h2 class="text-center"><%= @kennel.baseline %></h2>
 </div>
 <div class="container">
   <div class="row">
@@ -14,7 +14,7 @@
           <div class="media-section">
             <h2>Description</h2>
             <p><%= @kennel.description %></p>
-            <p><strong>Address :</strong> <%= @kennel.address %></p>
+            <p id="address-p"><strong>Address :</strong> <%= @kennel.full_address %></p>
           </div>
         </div>
 
@@ -34,15 +34,18 @@
     </div>
   </div>
 </div>
-
-<!--
+<div class="wrapper-gmap" id="map" style="width: 100%;height: 500px;"></div>
 
 <% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    $(document).ready(function() {
-      var coord = <%= raw @kennel_coordinates.to_json %>;
-      alert('Kennel coordinates are ' + coord.lat + ', ' + coord.lng);
+  <script type="text/javascript">
+    $(document).on('ready', function() {
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function(){
+        markers = handler.addMarker({lat: <%= @kennel.latitude %>, lng: <%= @kennel.longitude %>});
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        handler.getMap().setZoom(15);
+      });
     });
-  <% end %>
+  </script>
 <% end %>
- -->
