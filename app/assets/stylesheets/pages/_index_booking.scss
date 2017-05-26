@@ -8,6 +8,7 @@
 .row.uniq {
   display:table-row;
   background: #f6f6f6;
+  border-bottom: 1px solid $gray;
 }
 
 .row.uniq.header {
@@ -21,6 +22,16 @@
   padding: 6px 12px;
   display:table-cell;
   padding: 2px 12px;
+  vertical-align:middle;
+  text-align: center;
+}
+
+.cell.message {
+  width: 35%;
+}
+
+.cell.confirmation {
+  padding-top: 10px;
 }
 
 .wraping-up {
