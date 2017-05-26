@@ -2,18 +2,32 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="booking-confirmation">
-        <h2 class="text-center">Here's your booking summary</h2>
-        <p class="text-center"><strong>Start Date : </strong><%= @booking.start_date.to_date %></p>
-        <p class="text-center"><strong>End Date :</strong> <%= @booking.end_date.to_date %></p>
-        <p class="text-center"><strong>Confirmation status :</strong> <%= yesno(@booking.confirmation_status) %></p>
-        <p class="text-center"><strong>The Kennel address : </strong><%= @booking.kennel.address %></p>
-        <p class="text-center"><strong>Your dog sitter : </strong><%= @booking.kennel.user.first_name %> <%= @booking.kennel.user.last_name %></p>
-         <p class="text-center"><strong>Your message : </strong><%= @booking.message %></p>
-        <div class="text-center">
-        <%= link_to "Back to home page", root_path, class: "btn btn-primary" %>
+        <div>
+          <h2 class="text-center">Here's your booking summary</h2>
         </div>
+        <div class="row" id="confirmation-div">
+
+          <% kennel_url = cl_image_path @booking.kennel.photo.path || "http://unsplash.it/30x30" %>
+          <%= image_tag kennel_url, class: "confirmation-image"%>
+          <div class="" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @booking.kennel.photo.path %>');"></div>
+          <div class="confirmation-infos">
+          <div id="dog-message"><h3><%= @booking.kennel.user.dog_name %> can't wait to meet his new friend... </h3></div>
+            <ul>
+              <li class="confirmation-info"><strong>Start Date : </strong><%= @booking.start_date.to_date %></li>
+              <li class="confirmation-info"><strong>End Date :</strong> <%= @booking.end_date.to_date %></li>
+              <li class="confirmation-info"><strong>Confirmation status :</strong> <%= yesno(@booking.confirmation_status) %></li>
+              <li class="confirmation-info"><strong>The Kennel address : </strong><%= @booking.kennel.address %></li>
+              <li class="confirmation-info"><strong>Your dog sitter : </strong><%= @booking.kennel.user.first_name %> <%= @booking.kennel.user.last_name %></li>
+              <li class="confirmation-info"><strong>Your message : </strong><%= @booking.message %></li>
+            </ul>
+          </div>
+
+          <div class="text-center dashboard-btn">
+            <%= link_to "Go to my dashboard", user_bookings_path(current_user), class: "btn btn-primary" %>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+

@@ -1,4 +1,6 @@
 .booking-confirmation {
+  position: relative;
+  background-color: white;
   border: 1px solid #999999;
   padding: 10px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
@@ -7,3 +9,37 @@
   margin-top: 100px;
   margin-bottom: 100px;
 }
+
+#confirmation-div {
+  display: flex;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+
+.confirmation-image {
+  width: 420px;
+  height: 390px;
+  border-radius: 50%;
+  margin-left: 50px;
+}
+
+.confirmation-infos {
+  margin-top: 40px;
+}
+
+.confirmation-info {
+  list-style: none;
+  margin-left: 40px;
+}
+
+#dog-message {
+  margin-bottom: 80px;
+}
+
+.dashboard-btn {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+}
+
