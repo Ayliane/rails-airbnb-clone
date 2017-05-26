@@ -4,18 +4,18 @@
   <div class="row-fluid">
     <div class="col-xs-6 ">
       <ul>
-<!--         <% if @kennels.size == 1 %>
+        <% if @kennels.size == 1 %>
           <div class="col-xs-12">
               <div class="kennel-card"   style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @kennels.first.photo.path, height: 300, width: 400, crop: :fill %>')">
-                <div class="card-name"><h4><%= @kennels.user.first_name.capitalize %>'s holidog.</h4>
+                <div class="card-name"><h4><%= @kennels.first.user.first_name.capitalize %>'s holidog.</h4>
               </div>
 
               <% avatar_url = "http://unsplash.it/30x30" %>
               <%= image_tag avatar_url, class: "card-user avatar avatar-large" %>
-              <%= link_to '', kennel, class: "card-link" %>
+              <%= link_to '', @kennels.first, class: "card-link" %>
             </div>
           </div>
-        <% else %> -->
+        <% else %>
           <% @kennels.each do |kennel| %>
             <div class="col-xs-6">
               <div class="kennel-card"   style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path kennel.photo.path, height: 300, width: 400, crop: :fill %>')">
@@ -28,7 +28,7 @@
               </div>
             </div>
           <% end %>
-<!--         <% end %> -->
+        <% end %>
       </ul>
     </div>
     <div class="col-xs-6" id="map-div">
