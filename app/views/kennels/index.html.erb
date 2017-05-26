@@ -18,6 +18,31 @@
               <%= link_to '', @kennels.first, class: "card-link" %>
             </div>
           </div>
+                </ul>
+    </div>
+    <div class="col-xs-6" id="map-div">
+        <div id="map" style="width: 100%; height: 600px;"></div>
+      </div>
+  </div>
+        <% elsif @kennels.size == 0 %>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h3 class="not-found text-center">Aaaaw... there's no dog-sitter here yet :(</h3>
+
+                  </ul>
+                  </div>
+
+
+    <div class="col-xs-6" id="dog-sad">
+            <br>
+        <div id="dog"><%= image_tag "sad_dog.jpg", class:"not-found-img" %></div>
+      </div>
+  </div>
+
         <% else %>
           <% @kennels.each do |kennel| %>
             <div class="col-xs-6">
@@ -33,14 +58,21 @@
                 <%= link_to '', kennel, class: "card-link" %>
               </div>
             </div>
+
           <% end %>
-        <% end %>
-      </ul>
+           </ul>
     </div>
     <div class="col-xs-6" id="map-div">
         <div id="map" style="width: 100%; height: 600px;"></div>
       </div>
   </div>
+        <% end %>
+<!--       </ul>
+    </div>
+    <div class="col-xs-6" id="map-div">
+        <div id="map" style="width: 100%; height: 600px;"></div>
+      </div>
+  </div> -->
 </div>
 
 

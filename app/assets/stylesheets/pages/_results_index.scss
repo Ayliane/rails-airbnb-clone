@@ -25,3 +25,18 @@
 // #map-div {
 //   margin-right: 25px;
 // }
+.not-found-img {
+  height: 400px;
+  width: 600px;
+  background-size: cover;
+  align-items: center;
+}
+
+.not-found {
+  align-items: center;
+  justify-content: center;
+}
+
+.not-found-container {
+  display: flex;
+}
