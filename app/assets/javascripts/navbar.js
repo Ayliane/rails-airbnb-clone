@@ -1,5 +1,6 @@
 function refreshBadge(){
   $.ajax({
+
     url: '/',
     format: 'js'
   })

@@ -21,7 +21,7 @@
             <div class="cell">
               Dog sitter
             </div>
-            <div class="cell">
+            <div class="cell message">
               Your message
             </div>
             <div class="cell">
@@ -29,32 +29,32 @@
             </div>
           </div>
           <% if @bookings_demands.blank? %>
-            </div>
-            <p>You have no vacation planned for your dog :)</p>
-
-          <% else %>
-
-            <% @bookings_demands.each do |booking| %>
-              <div class="row uniq">
-                <div class="cell">
-                  <%= (booking.start_date).strftime("%B %d, %Y") %>
-                </div>
-                <div class="cell">
-                  <%= (booking.end_date).strftime("%B %d, %Y") %>
-                </div>
-                <div class="cell">
-                  <%= booking.kennel.user.first_name %> <%= booking.kennel.user.last_name %>
-                </div>
-                <div class="cell">
-                  <%= booking.message %>
-                </div>
-                <div class="cell">
-                  <%= confirmation_status(booking.confirmation_status) %>
-                </div>
-              </div>
-            <% end %>
         </div>
-          <% end %>
+        <p>You have no vacation planned for your dog :)</p>
+
+        <% else %>
+
+        <% @bookings_demands.each do |booking| %>
+        <div class="row uniq">
+          <div class="cell">
+            <%= (booking.start_date).strftime("%B %d, %Y") %>
+          </div>
+          <div class="cell">
+            <%= (booking.end_date).strftime("%B %d, %Y") %>
+          </div>
+          <div class="cell">
+            <%= booking.kennel.user.first_name %> <%= booking.kennel.user.last_name %>
+          </div>
+          <div class="cell message">
+            <%= booking.message %>
+          </div>
+          <div class="cell">
+            <%= confirmation_status(booking.confirmation_status) %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
 
       <br>
       <h3>My dog-sitting offers</h3>
@@ -67,55 +67,50 @@
             From
           </div>
           <div class="cell">
-              To
+            To
           </div>
           <div class="cell">
-              Dog owner
+            Dog owner
           </div>
           <div class="cell">
-              Owner's message
+            Owner's message
           </div>
           <div class="cell">
-              Confirmation Status
+            Confirmation Status
           </div>
         </div>
 
         <% if @booking_offers.blank? %>
-          </div>
-          <p>Nobody asked you to dog-sit yet !</p>
+      </div>
+      <p>Nobody asked you to dog-sit yet !</p>
 
-        <% else %>
+      <% else %>
 
-          <% @booking_offers.each do |offer| %>
-          <div class="row uniq">
-            <div class="cell">
-              <%= (offer.start_date).strftime("%B %d, %Y") %>
-            </div>
-            <div class="cell">
-              <%= (offer.end_date).strftime("%B %d, %Y") %>
-            </div>
-            <div class="cell">
-              <%= offer.user.first_name %> <%= offer.user.last_name %>
-            </div>
-            <div class="cell">
-              <%= offer.message %>
-            </div>
-            <div class="cell">
-              <label class="switch">
-
-    <%= check_box_tag 'confirmed', offer.id , offer.confirmation_status, class: "status-true" %>
-    <div class="slider round"></div>
-           </label>
-
-
-
-
-            </div>
-          </div>
-          <% end %>
+      <% @booking_offers.each do |offer| %>
+      <div class="row uniq">
+        <div class="cell offer-content">
+          <%= (offer.start_date).strftime("%B %d, %Y") %>
+        </div>
+        <div class="cell offer-content">
+          <%= (offer.end_date).strftime("%B %d, %Y") %>
+        </div>
+        <div class="cell offer-content">
+          <%= offer.user.first_name %> <%= offer.user.last_name %>
+        </div>
+        <div class="cell offer-content">
+          <%= offer.message %>
+        </div>
+        <div class="cell confirmation">
+          <label class="switch">
+            <%= check_box_tag 'confirmed', offer.id , offer.confirmation_status, class: "status-true", id: "confirmation-checkbox" %>
+            <div class="slider round"></div>
+          </label>
+        </div>
       </div>
       <% end %>
     </div>
+    <% end %>
   </div>
+</div>
 </div>
 </div>
