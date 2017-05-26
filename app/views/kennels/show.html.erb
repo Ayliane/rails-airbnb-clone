@@ -14,7 +14,7 @@
           <div class="media-section">
             <h2>Description</h2>
             <p><%= @kennel.description %></p>
-            <p><strong>Address :</strong> <%= @kennel.address %></p>
+            <p id="address-p"><strong>Address :</strong> <%= @kennel.full_address %></p>
           </div>
         </div>
 
@@ -32,18 +32,20 @@
 
       </div>
     </div>
-    <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&sensor=false&maptype=roadmap&markers=color:red|#{@kennel.full_address}" %>
   </div>
 </div>
-
-<!--
+<div class="wrapper-gmap" id="map" style="width: 100%;height: 500px;"></div>
 
 <% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    $(document).ready(function() {
-      var coord = <%= raw @kennel_coordinates.to_json %>;
-      alert('Kennel coordinates are ' + coord.lat + ', ' + coord.lng);
+  <script type="text/javascript">
+    $(document).on('ready', function() {
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function(){
+        markers = handler.addMarker({lat: <%= @kennel.latitude %>, lng: <%= @kennel.longitude %>});
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        handler.getMap().setZoom(15);
+      });
     });
-  <% end %>
+  </script>
 <% end %>
- -->
