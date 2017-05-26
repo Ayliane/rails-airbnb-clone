@@ -16,7 +16,10 @@
           checked: false, label: 'Do you have a garden ?', class: "radiobox radio-inline" %>
           <%= f.input :childs_around, as: :radio_buttons,
           item_label_class: "radio-inline",item_wrapper_tag: false, checked: false, label: 'Do you have childs at home ?' %>
-          <%= f.input :photo, as: :attachinary %>
+          <label class="custom-file-upload">
+          <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+          <%= f.input :photo, type: "file", as: :attachinary %>
+          </label>
           <%= f.submit "Submit my offer", class: "login-button" %>
         </div>
         <% end %>
