@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20170526121829) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "baseline"
+
     t.index ["user_id"], name: "index_kennels_on_user_id", using: :btree
   end
 
