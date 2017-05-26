@@ -20,3 +20,14 @@ h2{
   font-family: Raleway;
   color:black;
 }
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    padding: 6px 12px;
+    cursor: pointer;
+    margin: 10px;
+    padding-top: 0px;
+}
