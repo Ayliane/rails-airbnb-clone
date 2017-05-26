@@ -36,19 +36,19 @@
 
         <% @bookings_demands.each do |booking| %>
         <div class="row uniq">
-          <div class="cell">
+          <div class="cell bottom">
             <%= (booking.start_date).strftime("%B %d, %Y") %>
           </div>
-          <div class="cell">
+          <div class="cell bottom">
             <%= (booking.end_date).strftime("%B %d, %Y") %>
           </div>
-          <div class="cell">
+          <div class="cell bottom">
             <%= booking.kennel.user.first_name %> <%= booking.kennel.user.last_name %>
           </div>
-          <div class="cell message">
+          <div class="cell message bottom">
             <%= booking.message %>
           </div>
-          <div class="cell">
+          <div class="cell bottom">
             <%= confirmation_status(booking.confirmation_status) %>
           </div>
         </div>
