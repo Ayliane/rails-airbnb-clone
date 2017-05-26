@@ -1,12 +1,15 @@
 <div class="container">
   <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-center welcome-msg"><%= current_user.first_name %>, Welcome on HOLDIDOG !</h1>
+    </div>
     <div class="col-xs-8 col-xs-offset-2">
       <div class="booking-box">
 
         <%= simple_form_for ([@kennel, @booking]), html: { class: "hidden-form" } do |f| %>
 
           <div class="form-inputs">
-            <%= f.input :message, label: "Leave a message to your dog sitter :", :input_html => {:rows => 7} %>
+            <%= f.input :message, label: "To complete your booking, please leave a message to your dog sitter :", :input_html => {:rows => 7} %>
             <%= f.hidden_field :start_date, value: session[:start_date], as: :date %>
             <%= f.hidden_field :end_date, value: session[:end_date], as: :date %>
           </div>
