@@ -73,8 +73,8 @@ first_kennel.photo_url = kennel_1_url
 
 second_kennel = Kennel.new(
   user: user_1,
-  city: "Lyon",
-  address: "2 rue des Bleuets",
+  city: "Toulouse",
+  address: "Place du capitole",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum quam obcaecati, itaque. Sit quo, libero beatae, quam quasi laboriosam quisquam, fugiat ullam eos totam maiores aperiam consectetur illo accusamus enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque odio mollitia voluptates voluptate voluptatem nobis a, necessitatibus dicta praesentium, aliquam, delectus provident qui quae animi ea fuga officiis accusamus ut! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit fugit minus, id ea, sed harum. Possimus magnam quia eaque tempora, maiores nemo, recusandae, commodi cumque, placeat pariatur odio modi nulla!"
 )
 
@@ -123,8 +123,8 @@ seventh_kennel.photo_url = kennel_7_url
 
 sixth_kennel = Kennel.new(
   user: user_7,
-  city: "Lyon",
-  address: "44 rue Florence",
+  city: "Saint-Etienne",
+  address: "Rue de la république",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum quam obcaecati, itaque. Sit quo, libero beatae, quam quasi laboriosam quisquam, fugiat ullam eos totam maiores aperiam consectetur illo accusamus enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque odio mollitia voluptates voluptate voluptatem nobis a, necessitatibus dicta praesentium, aliquam, delectus provident qui quae animi ea fuga officiis accusamus ut! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit fugit minus, id ea, sed harum. Possimus magnam quia eaque tempora, maiores nemo, recusandae, commodi cumque, placeat pariatur odio modi nulla!"
 )
 

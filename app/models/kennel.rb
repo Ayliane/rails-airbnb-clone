@@ -9,9 +9,15 @@ class Kennel < ApplicationRecord
   validates :city, presence: true
 
   geocoded_by :full_address
-  after_validation :geocode, if: :address_changed?
+  after_validation :geocode, if: :full_address_changed?
 
   def full_address
     "#{address}, #{city}"
+  end
+
+  private
+
+  def full_address_changed?
+    address_changed? || city_changed?
   end
 end

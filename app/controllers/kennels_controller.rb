@@ -5,16 +5,18 @@ class KennelsController < ApplicationController
   def index
     session[:start_date] = params[:start_date]
     session[:end_date] = params[:end_date]
-    genuine_kennels = Kennel.near(params[:city], 20)
+
+    genuine_kennels = Kennel.near(params[:city], 10).where.not(latitude: nil, longitude: nil)
+    # Latitude : 45.7484600°
+    # Longitude : 4.8467100°
     # where("city iLike ?", params[:city])
     @kennels = []
+
     genuine_kennels.each do |kennel|
       if kennel.bookings.blank?
         @kennels << kennel
       end
     end
-
-    @kennels = Kennel.where.not(latitude: nil, longitude: nil)
 
     @hash = Gmaps4rails.build_markers(@kennels) do |kennel, marker|
       marker.lat kennel.latitude
@@ -25,8 +27,7 @@ class KennelsController < ApplicationController
 
   def show
     @kennel = Kennel.find(params[:id])
-    # @alert_message = "You are viewing #{@kennel.address}"
-    @kennel_coordinates = { lat: @kennel.latitude, lng: @kennel.longitude }
+    # @kennel_coordinates = { lat: @kennel.latitude, lng: @kennel.longitude }
   end
 
   def new
