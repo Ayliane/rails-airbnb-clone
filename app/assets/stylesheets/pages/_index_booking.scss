@@ -25,6 +25,18 @@
   text-align: center;
 }
 
+.cell.pending {
+  background-color: #F4661B;
+  color: #fafafa;
+  font-weight: bold;
+}
+
+.cell.confirmed {
+  background-color: #32CD32;
+  color: #fafafa;
+  font-weight: bold;
+}
+
 .cell.message {
   width: 35%;
 }
